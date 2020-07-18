@@ -1,0 +1,51 @@
+﻿@model Apps.Models.Tables.Nurses
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Nurses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nameNurse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nameNurse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.emailNurse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.emailNurse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.passwordNurse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.passwordNurse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNurse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phoneNurse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.created)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.created)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idNurse" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

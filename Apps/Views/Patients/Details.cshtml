@@ -1,0 +1,60 @@
+﻿@model Apps.Models.Tables.Patients
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namePatients)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.namePatients)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phonePatients)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phonePatients)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.health_condition)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.health_condition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doctor_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.doctor_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nurse_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nurse_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.created)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.created)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idPatients">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
