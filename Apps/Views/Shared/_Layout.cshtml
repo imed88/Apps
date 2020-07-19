@@ -37,7 +37,7 @@
                     <!--<li><a asp-area="" asp-controller="Administration" asp-action="Index">AdminAccount</a></li>-->
                   
                         
-                        @if (signInManager.IsSignedIn(User))//&& User.IsInRole("Admin")
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrateur"))
                         {
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
