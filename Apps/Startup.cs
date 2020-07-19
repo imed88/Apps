@@ -12,6 +12,8 @@ using Apps.Data;
 using Apps.Models;
 using Apps.Services;
 using Apps.Models.Tables;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace Apps
 {
@@ -61,7 +63,10 @@ namespace Apps
 
 
 
-            services.AddMvc();
+            services.AddMvc(options=> {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            }).AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,6 +14,7 @@ namespace Apps.Controllers.AdministrationAccount
 
         private readonly UserManager<ApplicationUser> userManager;
 
+
         public AdministrationController(UserManager<ApplicationUser> userManager)
         {
             this.userManager = userManager;

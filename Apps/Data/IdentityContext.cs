@@ -28,5 +28,6 @@ namespace Apps.Data
         public DbSet<Nurses> Nurses { get; set; }
         public DbSet<Patients> Patients { get; set; }
         public DbSet<Admins> Admin { get; set; }
+    
     }
 }
