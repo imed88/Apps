@@ -11,9 +11,10 @@ using System;
 namespace app.Data.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200720104732_CreateSpecialite")]
+    partial class CreateSpecialite
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,7 +102,7 @@ namespace app.Data.Migrations
                     b.Property<int>("idSpecialite")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("nameSpecialite");
+                    b.Property<string>("namePatients");
 
                     b.HasKey("idSpecialite");
 

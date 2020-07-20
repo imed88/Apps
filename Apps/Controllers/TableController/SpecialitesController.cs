@@ -10,22 +10,22 @@ using Apps.Models.Tables;
 
 namespace Apps.Controllers.TableController
 {
-    public class NursesController : Controller
+    public class SpecialitesController : Controller
     {
         private readonly IdentityContext _context;
 
-        public NursesController(IdentityContext context)
+        public SpecialitesController(IdentityContext context)
         {
             _context = context;
         }
 
-        // GET: Nurses
+        // GET: Specialites
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Nurses.ToListAsync());
+            return View(await _context.Specialites.ToListAsync());
         }
 
-        // GET: Nurses/Details/5
+        // GET: Specialites/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Apps.Controllers.TableController
                 return NotFound();
             }
 
-            var nurses = await _context.Nurses
-                .SingleOrDefaultAsync(m => m.idNurse == id);
-            if (nurses == null)
+            var specialites = await _context.Specialites
+                .SingleOrDefaultAsync(m => m.idSpecialite == id);
+            if (specialites == null)
             {
                 return NotFound();
             }
 
-            return View(nurses);
+            return View(specialites);
         }
 
-        // GET: Nurses/Create
+        // GET: Specialites/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Nurses/Create
+        // POST: Specialites/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idNurse,nameNurse,emailNurse,passwordNurse,phoneNurse,created")] Nurses nurses)
+        public async Task<IActionResult> Create([Bind("idSpecialite,nameSpecialite")] Specialites specialites)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(nurses);
+                _context.Add(specialites);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(nurses);
+            return View(specialites);
         }
 
-        // GET: Nurses/Edit/5
+        // GET: Specialites/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Apps.Controllers.TableController
                 return NotFound();
             }
 
-            var nurses = await _context.Nurses.SingleOrDefaultAsync(m => m.idNurse == id);
-            if (nurses == null)
+            var specialites = await _context.Specialites.SingleOrDefaultAsync(m => m.idSpecialite == id);
+            if (specialites == null)
             {
                 return NotFound();
             }
-            return View(nurses);
+            return View(specialites);
         }
 
-        // POST: Nurses/Edit/5
+        // POST: Specialites/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idNurse,nameNurse,emailNurse,passwordNurse,phoneNurse,created")] Nurses nurses)
+        public async Task<IActionResult> Edit(int id, [Bind("idSpecialite,nameSpecialite")] Specialites specialites)
         {
-            if (id != nurses.idNurse)
+            if (id != specialites.idSpecialite)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Apps.Controllers.TableController
             {
                 try
                 {
-                    _context.Update(nurses);
+                    _context.Update(specialites);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!NursesExists(nurses.idNurse))
+                    if (!SpecialitesExists(specialites.idSpecialite))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Apps.Controllers.TableController
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(nurses);
+            return View(specialites);
         }
 
-        // GET: Nurses/Delete/5
+        // GET: Specialites/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace Apps.Controllers.TableController
                 return NotFound();
             }
 
-            var nurses = await _context.Nurses
-                .SingleOrDefaultAsync(m => m.idNurse == id);
-            if (nurses == null)
+            var specialites = await _context.Specialites
+                .SingleOrDefaultAsync(m => m.idSpecialite == id);
+            if (specialites == null)
             {
                 return NotFound();
             }
 
-            return View(nurses);
+            return View(specialites);
         }
 
-        // POST: Nurses/Delete/5
+        // POST: Specialites/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var nurses = await _context.Nurses.SingleOrDefaultAsync(m => m.idNurse == id);
-            _context.Nurses.Remove(nurses);
+            var specialites = await _context.Specialites.SingleOrDefaultAsync(m => m.idSpecialite == id);
+            _context.Specialites.Remove(specialites);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool NursesExists(int id)
+        private bool SpecialitesExists(int id)
         {
-            return _context.Nurses.Any(e => e.idNurse == id);
+            return _context.Specialites.Any(e => e.idSpecialite == id);
         }
     }
 }

@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20200717164826_CreateDb.cs" />
     <Compile Remove="Data\Migrations\20200717164826_CreateDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200720063704_CreateDb.cs" />
+    <Compile Remove="Data\Migrations\20200720063704_CreateDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200720063811_CreateDb.cs" />
+    <Compile Remove="Data\Migrations\20200720063811_CreateDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200720065418_RemoveAdminTable.cs" />
+    <Compile Remove="Data\Migrations\20200720065418_RemoveAdminTable.Designer.cs" />
   </ItemGroup>
 
 

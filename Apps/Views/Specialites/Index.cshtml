@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Apps.Models.Tables.Specialites>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/CustomStyle.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+   
+    
+@*foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameSpecialite)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idSpecialite">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idSpecialite">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idSpecialite">Delete</a>
+            </td>
+        </tr>
+}
+    
+*@
+
+<div class="row justify-content-center m-3">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header ">
+
+                </div>
+                <div class="card-body text-center">
+                    @Html.DisplayFor(modelItem => item.nameSpecialite)
+                    
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Edit" asp-route-id="@item.idSpecialite">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.idSpecialite">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idSpecialite">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+    
+
+
+ 

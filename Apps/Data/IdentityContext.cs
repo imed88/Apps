@@ -24,10 +24,10 @@ namespace Apps.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
-        public DbSet<Doctors> Doctors { get; set; }
-        public DbSet<Nurses> Nurses { get; set; }
+       
         public DbSet<Patients> Patients { get; set; }
-        public DbSet<Admins> Admin { get; set; }
-    
+        public DbSet<Specialites> Specialites { get; set; }
+
+
     }
 }

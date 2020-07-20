@@ -21,59 +21,10 @@ namespace app.Data.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles");
 
-            migrationBuilder.CreateTable(
-                name: "Admin",
-                columns: table => new
-                {
-                    idAdmin = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    created = table.Column<DateTime>(nullable: false),
-                    emailAdmin = table.Column<string>(nullable: true),
-                    nameAdmin = table.Column<string>(nullable: true),
-                    passwordAdmin = table.Column<string>(nullable: true),
-                    phoneAdmin = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Admin", x => x.idAdmin);
-                });
+      
 
-            migrationBuilder.CreateTable(
-                name: "Doctors",
-                columns: table => new
-                {
-                    idDoctors = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    created = table.Column<DateTime>(nullable: false),
-                    emailDoctors = table.Column<string>(nullable: true),
-                    gender = table.Column<int>(nullable: false),
-                    nameDoctors = table.Column<string>(nullable: true),
-                    passwordDoctors = table.Column<string>(nullable: true),
-                    phoneDoctors = table.Column<string>(nullable: true),
-                    specialist = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Doctors", x => x.idDoctors);
-                });
 
-            migrationBuilder.CreateTable(
-                name: "Nurses",
-                columns: table => new
-                {
-                    idNurse = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    created = table.Column<DateTime>(nullable: false),
-                    emailNurse = table.Column<string>(nullable: true),
-                    nameNurse = table.Column<string>(nullable: true),
-                    passwordNurse = table.Column<string>(nullable: true),
-                    phoneNurse = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Nurses", x => x.idNurse);
-                });
-
+         
             migrationBuilder.CreateTable(
                 name: "Patients",
                 columns: table => new
