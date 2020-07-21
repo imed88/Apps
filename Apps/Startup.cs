@@ -58,8 +58,11 @@ namespace Apps
 
                 //User Settings
                 options.User.RequireUniqueEmail = true;
-               // options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                
+                // options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+               
             });
+
 
 
 

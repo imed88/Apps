@@ -14,5 +14,7 @@ namespace Apps.Models
         public string  Address { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime DOB { get; set; }
+
+
     }
 }
