@@ -13,6 +13,7 @@ namespace Apps.Controllers.TableController
     public class SpecialitesController : Controller
     {
         private readonly IdentityContext _context;
+        public IList<Specialites> specialites { get; set; }
 
         public SpecialitesController(IdentityContext context)
         {
@@ -20,10 +21,20 @@ namespace Apps.Controllers.TableController
         }
 
         // GET: Specialites
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searching)
         {
-            return View(await _context.Specialites.ToListAsync());
+            var specs = from s in _context.Specialites select s;
+            if (!String.IsNullOrEmpty(searching))
+            {
+                specs = specs.Where(s => s.nameSpecialite.Contains(searching));
+            }
+            return View(await specs.ToListAsync());
         }
+
+
+       
+
+        
 
         // GET: Specialites/Details/5
         public async Task<IActionResult> Details(int? id)
