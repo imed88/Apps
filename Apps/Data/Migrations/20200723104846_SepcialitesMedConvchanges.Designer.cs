@@ -11,9 +11,10 @@ using System;
 namespace app.Data.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200723104846_SepcialitesMedConvchanges")]
+    partial class SepcialitesMedConvchanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

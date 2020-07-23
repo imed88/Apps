@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Apps.Models;
 using Apps.Models.Tables;
 
+
 namespace Apps.Data
 {
     public class IdentityContext : IdentityDbContext<ApplicationUser>
@@ -27,6 +28,8 @@ namespace Apps.Data
        
         public DbSet<Patients> Patients { get; set; }
         public DbSet<Specialites> Specialites { get; set; }
+        public DbSet<MedecinConventionne> MedConv { get; set; }
+
 
 
     }
